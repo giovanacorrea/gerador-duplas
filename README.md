@@ -31,11 +31,4 @@
 ```
 ### Telas 
 
-<h4>Tela inicial</h4>
-
-![Tela Inicial](telainicial.png)
-
-<h4>Tabela de jogos</h4>
-
-![Tela Inicial](tabeladejogos.png)
 
