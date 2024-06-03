@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Gerador de Duplas</title>
+    <link rel="stylesheet" href="static/index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap">
+</head>
+<body>
+    <img src="static/images/logoVertical-sfundo.png" alt="Logo">
+    <h3>Gerador de duplas para torneio</h3>
+    <fieldset>
+        <form method="post" id="playerForm">
+            <label for="qtdjogadores">Digite o número de Jogadores</label>
+            <input type="number" id="qtdjogadores" name="qtdjogadores" min="1" value="1" class="inline" required><br><br>
+            <div id="playerFields"></div>
+            <input type="button" value="Adicionar jogadores" class="button" onclick="gerarCampos()">
+            <script>
+                function gerarCampos() {
+                    const campoJogadores = document.getElementById('playerFields');
+                    campoJogadores.innerHTML = '';  // Limpa os campos anteriores
+                    const numJogadores = document.getElementById('qtdjogadores').value;
+                    for (let i = 1; i <= numJogadores; i++) {
+                        const nomeJogadores = document.createElement('div');
+                        nomeJogadores.className = 'player-field';
+                        nomeJogadores.innerHTML = `
+                            <label for="player-${i}">Jogador ${i}</label>
+                            <input type="text" id="player-${i}" name="player-${i}" class="inline" class="ajuste" required>`;
+                        campoJogadores.appendChild(nomeJogadores);
+                    }
+                }
+            </script>
+            <input type="submit" value="Conferir duplas" class="button">
+        </form>
+    </fieldset>
+    
+    <footer>
+    <div class="footer">&copy;<span> Acajuá Sports. Todos os direitos reservados. </span></div>
+    </footer>
+
+</body>
+</html>
